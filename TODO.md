@@ -3,7 +3,10 @@
 - **TODO:**
   - [ ] Implement guestBookHandler.
   - [ ] Implement flowerCatalogHomePage
-  - [ ] Implement html  pages for flowers
+  - [ ] Implement html pages.
+    - [x] home page.
+    - [ ] flower pages
+    - [ ] guest book page
 
 - **DONE:**
   - [x] Implement flowerCatalogHandler.
