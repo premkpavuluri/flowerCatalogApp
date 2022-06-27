@@ -7,7 +7,9 @@ const catalogHandler = (request, response) => {
     return true;
   }
 
-  response.send(`${name}'s page`);
+  response.statusCode = 302;
+  response.setHeaders('Location', `/html/${name}.html`);
+  response.send('Redirecting to catalog page:', name);
   return true;
 };
 

@@ -4,7 +4,7 @@
   - [ ] Implement guestBookHandler.
   - [ ] Implement html pages.
     - [x] home page.
-    - [ ] flower pages
+    - [x] flower pages
     - [ ] guest book page
 
 - **DONE:**
