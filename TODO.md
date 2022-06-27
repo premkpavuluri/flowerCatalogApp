@@ -2,6 +2,8 @@
 
 - **TODO:**
   - [ ] Implement flowerCatalogHandler.
+    - [x] handler for home page.
+    - [ ] handler for flower catalogs.
   - [ ] Implement guestBookHandler.
   - [ ] Implement flowerCatalogHomePage
   - [ ] Implement pages for flowers

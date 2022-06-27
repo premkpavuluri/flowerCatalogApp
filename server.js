@@ -1,11 +1,7 @@
 const { createServer } = require('net');
 const { parseRequest } = require('./src/parseRequest.js');
 const { Response } = require('./src/response.js');
-
-const handler = (request, response) => {
-  response.send('Flower Catalog App');
-  return true;
-};
+const { flowerCatalogHandler } = require('./src/flowerCatalogHandler.js');
 
 const startServer = (PORT, requestHandler, path) => {
   const server = createServer((socket) => {
@@ -21,4 +17,4 @@ const startServer = (PORT, requestHandler, path) => {
   server.listen(PORT, () => console.log(`Server listening on ${PORT}`));
 };
 
-startServer(80, handler, process.argv[2]);
+startServer(80, flowerCatalogHandler, process.argv[2]);
