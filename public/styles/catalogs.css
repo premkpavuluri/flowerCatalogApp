@@ -15,6 +15,11 @@ body {
 }
 
 .page-body {
+  margin: 1em;
   display: flex;
   flex-direction: row;
+}
+
+.about-flower {
+  margin-left: 10px;
 }

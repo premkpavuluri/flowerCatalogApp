@@ -2,7 +2,8 @@ const fs = require('fs');
 
 const MIMETYPES = {
   'png': 'image/png',
-  'html': 'text/html'
+  'html': 'text/html',
+  'pdf': 'application/pdf'
 }
 
 const determineMimeType = (fileName) => {
