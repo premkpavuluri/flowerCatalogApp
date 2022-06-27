@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>Guest Book</title>
+</head>
+
+<body>
+  <div class="page-header">
+    <a href="/">Home</a>
+    <h1>Guest Book</h1>
+  </div>
+
+  <div class="page-body">
+    <article class="comment">
+      <h1>Leave a Comment</h1>
+      <form action="/logcomment" method="get">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <label for="comment">Comment:</label>
+        <textarea name="comment" cols="30" rows="5"></textarea>
+      </form>
+      <input type="button" value="Post">
+    </article>
+    <div class="commentsList">
+      __COMMENTS__
+    </div>
+  </div>
+</body>
+
+</html>

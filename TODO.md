@@ -2,12 +2,14 @@
 
 - **TODO:**
   - [ ] Implement guestBookHandler.
-  - [ ] Implement html pages.
-    - [x] home page.
-    - [x] flower pages
-    - [ ] guest book page
+  - [ ] implement not found handler.
 
 - **DONE:**
+  - [x] Implement html pages.
+    - [x] home page.
+    - [x] flower pages
+    - [x] guest book page
+  - [x] Connect guestBook in home page.
   - [x] Implement serverFileContentHandler.
   - [x] Implement flowerCatalogHomePage
   - [x] Implement flowerCatalogHandler.
