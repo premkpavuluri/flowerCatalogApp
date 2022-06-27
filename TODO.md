@@ -2,9 +2,9 @@
 
 - **TODO:**
   - [ ] Implement guestBookHandler.
-  - [ ] implement not found handler.
 
 - **DONE:**
+  - [x] implement not found handler.
   - [x] Implement html pages.
     - [x] home page.
     - [x] flower pages

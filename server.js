@@ -3,6 +3,7 @@ const { parseRequest } = require('./src/parseRequest.js');
 const { Response } = require('./src/response.js');
 const { flowerCatalogHandler } = require('./src/flowerCatalogHandler.js');
 const { serveFileContent } = require('./src/fileHandler.js');
+const { notFoundHandler } = require('./src/notFoundHandler.js');
 
 const handle = (handlers) => {
   return (request, response, path) => {
@@ -24,6 +25,6 @@ const startServer = (PORT, requestHandler, path) => {
   server.listen(PORT, () => console.log(`Server listening on ${PORT}`));
 };
 
-const handlers = [serveFileContent, flowerCatalogHandler];
+const handlers = [serveFileContent, flowerCatalogHandler, notFoundHandler];
 
 startServer(80, handle(handlers), process.argv[2]);
