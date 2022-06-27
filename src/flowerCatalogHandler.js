@@ -1,8 +1,3 @@
-const homePageHandler = (request, response) => {
-  response.send('Flower Catalog App Home page');
-  return true;
-};
-
 const catalogHandler = (request, response) => {
   const { queryParams } = request;
   const { name } = queryParams;
@@ -18,10 +13,6 @@ const catalogHandler = (request, response) => {
 
 const flowerCatalogHandler = (request, response) => {
   const { uri } = request;
-
-  if (uri === '/') {
-    return homePageHandler(request, response);
-  }
 
   if (uri === '/catalog') {
     return catalogHandler(request, response);

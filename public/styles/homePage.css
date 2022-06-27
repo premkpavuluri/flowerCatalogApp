@@ -5,10 +5,12 @@ body {
 
 .page-header {
   border-bottom: 1px solid black;
+  margin-bottom: 10px;
 }
 
 .page-header h1 {
   color: #ffb221;
+  text-align: center;
 }
 
 .page-body {
