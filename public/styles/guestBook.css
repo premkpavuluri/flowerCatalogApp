@@ -8,11 +8,21 @@
 }
 
 .page-header h1 {
-  color: #ffb221;
+  color: red;
 }
 
-.page-body {
-  margin: 1em;
-  display: flex;
-  flex-direction: row;
+.comment {
+  margin: 10px;
+}
+
+.comment * {
+  margin: 2px;
+}
+
+.comments {
+  border-top: 1px solid black;
+}
+
+.comments div {
+  font-size: 1.5em;
 }
