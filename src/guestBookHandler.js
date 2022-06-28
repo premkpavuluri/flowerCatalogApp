@@ -8,9 +8,9 @@ const dateTimeStamp = () => {
   return new Date().toLocaleString();
 };
 
-const genrateComments = (comments) => {
+const generateComments = (comments) => {
   return comments.map(({ date, name, comment }) => {
-    return `<div>${date}:${name}:${comment}</div>`;
+    return `<div>${date}  ${name} : ${comment}</div>`;
   }).join('');
 };
 
@@ -20,7 +20,7 @@ const writeFile = (fileName, content) => {
 };
 
 const serveGuestBook = (request, response) => {
-  const comments = genrateComments(fetchComments());
+  const comments = generateComments(fetchComments());
   const template = fs.readFileSync('./resources/gbTemplate.html', 'utf8');
   const html = template.replace('__COMMENTS__', comments);
 

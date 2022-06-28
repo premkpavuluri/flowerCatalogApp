@@ -2,9 +2,9 @@
 
 - **TODO:**
   - [ ] Consider comments entity.
-  - [ ] implement parser for query params.
 
 - **DONE:**
+  - [x] implement parser for query params.
   - [x] Implement guestBookHandler.
   - [x] implement not found handler.
   - [x] Implement html pages.
