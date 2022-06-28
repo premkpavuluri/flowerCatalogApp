@@ -1,9 +1,11 @@
 # Flower Catalog App
 
 - **TODO:**
-  - [ ] Implement guestBookHandler.
+  - [ ] Consider comments entity.
+  - [ ] implement parser for query params.
 
 - **DONE:**
+  - [x] Implement guestBookHandler.
   - [x] implement not found handler.
   - [x] Implement html pages.
     - [x] home page.

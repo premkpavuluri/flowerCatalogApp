@@ -1,0 +1,23 @@
+{
+  "name": "flowercatalogapp",
+  "version": "1.0.0",
+  "description": "Flower catalog App using JS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/premkpavuluri/flowerCatalogApp.git"
+  },
+  "keywords": [
+    "httpServer"
+  ],
+  "author": "Prem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/premkpavuluri/flowerCatalogApp/issues"
+  },
+  "homepage": "https://github.com/premkpavuluri/flowerCatalogApp#readme"
+}
