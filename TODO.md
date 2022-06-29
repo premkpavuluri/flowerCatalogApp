@@ -2,13 +2,16 @@
 
 - **TODO:**
   - [ ] Consider comments entity.
-  - [ ] Change the http server to built-in module.
-  - [ ] Change the handlers according to http moudle.
-    - [x] fileHandler
-    - [ ] flowerCatalogHandler
-    - [ ] guestBook handler
+  - [ ] Implment guestBook handler
+    - [x] implement handler for add comment
+    - [ ] implement handler for serving the guest book
 
 - **DONE:**
+  - [x] Change the handlers according to http moudle.
+    - [x] fileHandler
+    - [x] ~~flowerCatalogHandler~~
+    - [x] guestBook handler
+  - [x] Change the http server to built-in module.
   - [x] Separate the server and app code.
   - [x] Change the directory structure.
   - [x] implement parser for query params.

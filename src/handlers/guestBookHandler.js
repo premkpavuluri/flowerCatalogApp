@@ -1,57 +1,28 @@
-const fs = require("fs");
+const generateComment = (queryParams) => {
+  const comment = {};
+  for (const [key, value] of queryParams.entries()) {
+    comment[key] = value;
+  }
 
-const fetchComments = () => {
-  return JSON.parse(fs.readFileSync('database/comments.json', 'utf8'));
-};
-
-const dateTimeStamp = () => {
-  return new Date().toLocaleString();
-};
-
-const generateComments = (comments) => {
-  return comments.map(({ date, name, comment }) => {
-    return `<div>${date}  ${name} : ${comment}</div>`;
-  }).join('');
-};
-
-const writeFile = (fileName, content) => {
-  fs.writeFileSync(fileName, content, 'utf8');
-  return true;
-};
-
-const serveGuestBook = (request, response) => {
-  const comments = generateComments(fetchComments());
-  const template = fs.readFileSync('./resources/gbTemplate.html', 'utf8');
-  const html = template.replace('__COMMENTS__', comments);
-
-  response.setHeaders('Content-Type', 'text/html');
-  response.send(html);
-  return true;
+  const date = new Date().toLocaleString();
+  return { ...comment, date };
 };
 
 const addComment = (request, response) => {
-  const comments = fetchComments();
-  const date = dateTimeStamp();
-
-  const { queryParams: { name, comment } } = request;
-  comments.unshift({ date, name, comment });
-
-  writeFile('database/comments.json', JSON.stringify(comments));
+  const comment = generateComment(request.url.searchParams);
+  request.guestBook.unshift(comment);
 
   response.statusCode = 302;
-  response.setHeaders('Location', '/guestbook');
-  response.send('Thank you');
+  response.setHeader('Location', '/guestbook');
+  response.end('Thank you');
   return true;
 };
 
-const handleGuestBook = (request, response) => {
-  const { uri } = request;
+const handleGuestBook = (guestBook) => (request, response) => {
+  const { pathname } = request.url;
 
-  if (uri === '/guestbook') {
-    return serveGuestBook(request, response);
-  }
-
-  if (uri === '/logcomment') {
+  if (pathname === '/logcomment' && request.method === 'GET') {
+    request.guestBook = guestBook;
     return addComment(request, response);
   }
 };
