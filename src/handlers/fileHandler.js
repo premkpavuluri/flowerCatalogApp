@@ -5,7 +5,8 @@ const MIMETYPES = {
   '.jpg': 'image/jpeg',
   '.html': 'text/html',
   '.pdf': 'application/pdf',
-  '.css': 'text/css'
+  '.css': 'text/css',
+  '.json': 'application/json'
 }
 
 const determineMimeType = (extension) => {
@@ -20,7 +21,7 @@ const serveFileContent = (resourcePath) => (request, response) => {
   }
 
   const fileName = `${resourcePath}${pathname}`;
-
+  console.log(fileName);
   try {
     const content = fs.readFileSync(fileName);
     const extension = path.extname(fileName);

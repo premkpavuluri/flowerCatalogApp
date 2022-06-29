@@ -3,10 +3,11 @@
 - **TODO:**
   - [ ] Consider comments entity.
   - [ ] Make handlers for independent tasks.
-    - [ ] parse the query.
+    - [x] parse the query.
     - [ ] log the requests.
     - [ ] add the time stamp for each request.
     - [ ] add dependencies before actual handler.
+    - [ ] handler for parsing searchParams.
   - [ ] Think about name of the handlers(consider router)
 
 - **DONE:**
