@@ -2,11 +2,12 @@
 
 - **TODO:**
   - [ ] Consider comments entity.
-  - [ ] Implment guestBook handler
-    - [x] implement handler for add comment
-    - [ ] implement handler for serving the guest book
+  - [ ] persist the comments
 
 - **DONE:**
+  - [x] Implment guestBook handler
+    - [x] implement handler for add comment
+    - [x] implement handler for serving the guest book
   - [x] Change the handlers according to http moudle.
     - [x] fileHandler
     - [x] ~~flowerCatalogHandler~~
