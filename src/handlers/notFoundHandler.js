@@ -1,6 +1,7 @@
 const notFoundHandler = (request, response) => {
   response.statusCode = 404;
-  response.send('Not Found');
+  response.setHeader('Content-Type', 'text/plain');
+  response.end('Not Found');
   return true;
 };
 
