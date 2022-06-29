@@ -28,9 +28,16 @@ const generateComment = (queryParams) => {
   return { ...comment, date };
 };
 
+const persistComments = (comments, fileName) => {
+  fs.writeFileSync(fileName, JSON.stringify(comments), 'utf8');
+  return true;
+};
+
 const addComment = (request, response) => {
   const comment = generateComment(request.url.searchParams);
   request.guestBook.unshift(comment);
+
+  persistComments(request.guestBook, './db/comments.json');
 
   response.statusCode = 302;
   response.setHeader('Location', '/guestbook');
@@ -38,16 +45,14 @@ const addComment = (request, response) => {
   return true;
 };
 
-const handleGuestBook = (guestBook) => (request, response) => {
+const handleGuestBook = (request, response) => {
   const { pathname } = request.url;
 
   if (pathname === '/logcomment' && request.method === 'GET') {
-    request.guestBook = guestBook;
     return addComment(request, response);
   }
 
   if (pathname === '/guestbook' && request.method === 'GET') {
-    request.guestBook = guestBook;
     return serveGuestBook(request, response);
   }
 };

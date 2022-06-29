@@ -2,9 +2,16 @@
 
 - **TODO:**
   - [ ] Consider comments entity.
-  - [ ] persist the comments
+  - [ ] Make handlers for independent tasks.
+    - [ ] parse the query.
+    - [ ] log the requests.
+    - [ ] add the time stamp for each request.
+    - [ ] add dependencies before actual handler.
+  - [ ] Think about name of the handlers(consider router)
 
 - **DONE:**
+  - [x] persist the comments
+  - [x] load the comments before serving the guestBook.
   - [x] Implment guestBook handler
     - [x] implement handler for add comment
     - [x] implement handler for serving the guest book
