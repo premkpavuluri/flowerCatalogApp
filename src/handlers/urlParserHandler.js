@@ -2,6 +2,14 @@ const urlParserHandler = (request, response) => {
   const { host } = request.headers;
   request.url = new URL(`http://${host}${request.url}`);
 
+  const { searchParams } = request.url;
+  const queryParams = {};
+
+  for (const [key, value] of searchParams.entries()) {
+    queryParams[key] = value;
+  }
+
+  request.url.queryParams = queryParams;
   return false;
 };
 

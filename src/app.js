@@ -4,10 +4,14 @@ const { notFoundHandler } = require('./handlers/notFoundHandler.js');
 const { handleGuestBook } = require('./handlers/guestBookHandler.js');
 const { loadCommentsHandler } = require('./handlers/loadComments.js');
 const { urlParserHandler } = require('./handlers/urlParserHandler.js');
+const { catalogsRouter } = require('./api/catalogsRouter.js');
+const { commentsRouter } = require('./api/commentsRouter.js');
 
 const createRouter = ({ path, dbPath }) => {
   const handlers = [
     urlParserHandler,
+    catalogsRouter,
+    commentsRouter,
     loadCommentsHandler(dbPath),
     handleGuestBook,
     serveFileContent(path),

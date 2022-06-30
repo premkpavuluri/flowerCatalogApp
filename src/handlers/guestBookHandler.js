@@ -18,24 +18,16 @@ const serveGuestBook = (request, response) => {
   return true;
 };
 
-const generateComment = (queryParams) => {
-  const comment = {};
-  for (const [key, value] of queryParams.entries()) {
-    comment[key] = value;
-  }
-
-  const date = new Date().toLocaleString();
-  return { ...comment, date };
-};
-
 const persistComments = (comments, fileName) => {
   fs.writeFileSync(fileName, JSON.stringify(comments), 'utf8');
   return true;
 };
 
 const addComment = (request, response) => {
-  const comment = generateComment(request.url.searchParams);
-  request.guestBook.unshift(comment);
+  const comment = request.url.queryParams;
+  const date = new Date().toLocaleString();
+
+  request.guestBook.unshift({ ...comment, date });
 
   persistComments(request.guestBook, './db/comments.json');
 
