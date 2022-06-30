@@ -25,7 +25,6 @@ const persistComments = (comments, fileName) => {
 
 const addComment = (request, response) => {
   const comment = request.url.queryParams;
-  // const date = new Date().toLocaleString();
 
   request.guestBook.unshift(comment);
 

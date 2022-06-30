@@ -2,15 +2,20 @@
 
 - **TODO:**
   - [ ] Consider comments entity.
-  - [ ] Make handlers for independent tasks.
+  - [ ] Think about name of the handlers(consider router)
+  - [ ] Implemente handler for loading api data.
+
+- **DONE:**
+  - [x] Implement api's for app
+    - [x] about app
+    - [x] about various flower catalogs
+    - [x] for comments.
+  - [x] Make handlers for independent tasks.
     - [x] parse the query.
     - [x] log the requests.
     - [x] add the time stamp for each request.
-    - [ ] add dependencies before actual handler.
+    - [x] ~~add dependencies before actual handler.~~
     - [x] handler for parsing searchParams.
-  - [ ] Think about name of the handlers(consider router)
-
-- **DONE:**
   - [x] persist the comments
   - [x] load the comments before serving the guestBook.
   - [x] Implment guestBook handler
