@@ -1,8 +1,6 @@
 const catalogsApiHandler = (request, response) => {
-  const content = { catalogs: ["abeliophyllym", "ageratum"] };
-
   response.setHeader('Content-Type', 'application/json');
-  response.end(JSON.stringify(content));
+  response.end(JSON.stringify(request.appInfo.catalogs));
 
   return true;
 };
@@ -16,7 +14,7 @@ const commentsApiHandler = (request, response) => {
 
 const homeApiHandler = (request, response) => {
   response.setHeader('Content-Type', 'application/json');
-  response.end('{"appName":"FlowerCatalogApp"}');
+  response.end(JSON.stringify(request.appInfo));
 
   return true;
 };
@@ -25,6 +23,7 @@ const apiRouter = (request, response) => {
   const { pathname } = request.url;
 
   if (pathname === '/api') {
+    console.log(request.appInfo);
     return homeApiHandler(request, response);
   }
 
