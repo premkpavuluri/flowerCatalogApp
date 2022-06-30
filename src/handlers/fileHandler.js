@@ -21,7 +21,7 @@ const serveFileContent = (resourcePath) => (request, response) => {
   }
 
   const fileName = `${resourcePath}${pathname}`;
-  console.log(fileName);
+
   try {
     const content = fs.readFileSync(fileName);
     const extension = path.extname(fileName);

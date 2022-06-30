@@ -6,9 +6,11 @@ const { loadCommentsHandler } = require('./handlers/loadComments.js');
 const { urlParserHandler } = require('./handlers/urlParserHandler.js');
 const { catalogsRouter } = require('./api/catalogsRouter.js');
 const { commentsRouter } = require('./api/commentsRouter.js');
+const { logRequestHandler } = require('./handlers/logRequestHandler.js');
 
 const createRouter = ({ path, dbPath }) => {
   const handlers = [
+    logRequestHandler,
     urlParserHandler,
     catalogsRouter,
     commentsRouter,

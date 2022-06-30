@@ -9,6 +9,8 @@ const urlParserHandler = (request, response) => {
     queryParams[key] = value;
   }
 
+  queryParams.date = request.timeStamp;
+
   request.url.queryParams = queryParams;
   return false;
 };
