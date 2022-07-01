@@ -1,10 +1,10 @@
-const { startServer } = require('./src/server/server.js');
-const { createRouter } = require('./src/app.js');
+const { startServer } = require('myserver');
+const { connectHandlers } = require('./src/app.js');
 
 const resource = {
   resourceRoot: process.argv[2],
   dbPath: './db/comments.json'
 };
 
-const router = createRouter(resource);
+const router = connectHandlers(resource);
 startServer(80, router);

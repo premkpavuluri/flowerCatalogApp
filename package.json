@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/premkpavuluri/flowerCatalogApp/issues"
   },
-  "homepage": "https://github.com/premkpavuluri/flowerCatalogApp#readme"
+  "homepage": "https://github.com/premkpavuluri/flowerCatalogApp#readme",
+  "dependencies": {
+    "myserver": "github:premkpavuluri/httpServerModule"
+  }
 }

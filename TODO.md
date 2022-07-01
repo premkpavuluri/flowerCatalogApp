@@ -3,9 +3,15 @@
 - **TODO:**
   - [ ] Consider comments entity.
   - [ ] Think about name of the handlers(consider router)
-  - [ ] Implemente handler for loading api data.
+  - [x] Attach httpServerModule through npm.
+  - [ ] Update the contract of handlers according to async.
+    - guestbook
+    - loadcomments
+    - loadapidata
+    - api
 
 - **DONE:**
+  - [x] Implemente handler for loading api data.
   - [x] Implement api's for app
     - [x] about app
     - [x] about various flower catalogs
