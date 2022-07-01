@@ -36,7 +36,7 @@ const addComment = (request, response) => {
   return true;
 };
 
-const handleGuestBook = (request, response) => {
+const handleGuestBook = (request, response, next) => {
   const { pathname } = request.url;
 
   if (pathname === '/logcomment' && request.method === 'GET') {
@@ -46,6 +46,8 @@ const handleGuestBook = (request, response) => {
   if (pathname === '/guestbook' && request.method === 'GET') {
     return serveGuestBook(request, response);
   }
+
+  next();
 };
 
 module.exports = { handleGuestBook };

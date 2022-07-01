@@ -16,7 +16,7 @@ const determineMimeType = (extension) => {
 const serveFileContent = (resourcePath) => (request, response, next) => {
   let { pathname } = request.url;
 
-  if (pathname === '/' && request.method === 'GET') {
+  if (pathname === '/') {
     pathname = '/index.html';
   }
 
