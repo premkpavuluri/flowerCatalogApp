@@ -13,7 +13,7 @@ const determineMimeType = (extension) => {
   return MIMETYPES[extension];
 };
 
-const serveFileContent = (resourcePath) => (request, response) => {
+const serveFileContent = (resourcePath) => (request, response, next) => {
   let { pathname } = request.url;
 
   if (pathname === '/' && request.method === 'GET') {
@@ -22,14 +22,15 @@ const serveFileContent = (resourcePath) => (request, response) => {
 
   const fileName = `${resourcePath}${pathname}`;
 
-  try {
-    const content = fs.readFileSync(fileName);
+  fs.readFile(fileName, (err, data) => {
+    if (err) {
+      return next();
+    }
+
     const extension = path.extname(fileName);
     response.setHeader('Content-Type', determineMimeType(extension));
-    response.end(content);
-  } catch (error) {
-    return false;
-  }
+    response.end(data);
+  });
 
   return true;
 };

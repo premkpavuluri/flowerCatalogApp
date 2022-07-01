@@ -2,8 +2,8 @@ const {
   createRouter,
   logRequestHandler,
   urlParserHandler,
-  notFoundHandler,
-  serveFileContent } = require('myserver');
+  notFoundHandler } = require('myserver');
+const { serveFileContent } = require('./handlers/fileHandler.js');
 
 const connectHandlers = ({ resourceRoot, dbPath }) => {
   const handlers = [

@@ -3,14 +3,16 @@
 - **TODO:**
   - [ ] Consider comments entity.
   - [ ] Think about name of the handlers(consider router)
-  - [x] Attach httpServerModule through npm.
   - [ ] Update the contract of handlers according to async.
-    - guestbook
-    - loadcomments
-    - loadapidata
-    - api
+    - [x] filehandler
+    - [ ] guestbook
+    - [ ] loadcomments
+    - [ ] loadapidata
+    - [ ] api
+  - [ ] Change the method of logcomment handler(GET->POST).
 
 - **DONE:**
+  - [x] Attach httpServerModule through npm.
   - [x] Implemente handler for loading api data.
   - [x] Implement api's for app
     - [x] about app
