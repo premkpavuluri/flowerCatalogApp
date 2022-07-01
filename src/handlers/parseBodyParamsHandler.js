@@ -9,7 +9,7 @@ const parseParams = (searchParams) => {
   return parsedParams;
 };
 
-const parseBodyParams = (req, res, next) => {
+const handleParseBodyParams = (req, res, next) => {
   let payload = '';
 
   req.setEncoding('utf8');
@@ -21,6 +21,15 @@ const parseBodyParams = (req, res, next) => {
     req.bodyParams = parseParams(payload);
     next();
   });
+};
+
+const parseBodyParams = (req, res, next) => {
+
+  if (req.method === 'POST') {
+    return handleParseBodyParams(req, res, next);
+  }
+
+  next();
 };
 
 module.exports = { parseBodyParams };
