@@ -6,9 +6,10 @@
   - [ ] Update the contract of Api handlers to async.
     - [ ] loadapidata
     - [ ] api
-  - [ ] Change the method of logcomment handler(GET->POST).
 
 - **DONE:**
+  - [x] Change the method of logcomment handler(GET->POST).
+  - [x] Parse the payload upfront.
   - [x] Update the contract of handlers according to async.
     - [x] filehandler
     - [x] guestbook

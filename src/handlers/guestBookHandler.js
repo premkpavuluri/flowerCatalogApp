@@ -24,7 +24,8 @@ const persistComments = (comments, fileName) => {
 };
 
 const addComment = (request, response) => {
-  const comment = request.url.queryParams;
+  const date = request.timeStamp;
+  const comment = { ...request.bodyParams, date };
 
   request.guestBook.unshift(comment);
 
@@ -39,7 +40,7 @@ const addComment = (request, response) => {
 const handleGuestBook = (request, response, next) => {
   const { pathname } = request.url;
 
-  if (pathname === '/logcomment' && request.method === 'GET') {
+  if (pathname === '/logcomment' && request.method === 'POST') {
     return addComment(request, response);
   }
 
