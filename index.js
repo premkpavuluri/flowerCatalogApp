@@ -7,4 +7,4 @@ const resource = {
 };
 
 const router = connectHandlers(resource);
-startServer(80, router);
+startServer(8000, router);
