@@ -2,7 +2,7 @@ const { startServer } = require('myserver');
 const { connectHandlers } = require('./src/app.js');
 
 const appConfig = {
-  resourceRoot: process.argv[2],
+  resourceRoot: './public',
   dbPath: './db/comments.json'
 };
 
