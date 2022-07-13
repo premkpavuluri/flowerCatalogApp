@@ -2,6 +2,7 @@ const request = require('supertest');
 const { connectHandlers } = require('../src/app.js');
 
 const appConfig = {
+  logOption: false,
   resourceRoot: './public',
   dbPath: './test/testData/db/comments.json'
 };
@@ -59,6 +60,7 @@ describe('GET /guestbook', () => {
 });
 
 const dbConfig = {
+  logOption: false,
   resourceRoot: './public',
   dbPath: './test/testData/db/commentsdb.json'
 };
