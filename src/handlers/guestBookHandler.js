@@ -29,7 +29,7 @@ const addComment = (request, response) => {
 
   request.guestBook.unshift(comment);
 
-  persistComments(request.guestBook, './db/comments.json');
+  persistComments(request.guestBook, request.dbPath);
 
   response.statusCode = 302;
   response.setHeader('Location', '/guestbook');
@@ -37,10 +37,11 @@ const addComment = (request, response) => {
   return true;
 };
 
-const handleGuestBook = (request, response, next) => {
+const handleGuestBook = (dbPath) => (request, response, next) => {
   const { pathname } = request.url;
 
   if (pathname === '/logcomment' && request.method === 'POST') {
+    request.dbPath = dbPath;
     return addComment(request, response);
   }
 

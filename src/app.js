@@ -14,7 +14,7 @@ const connectHandlers = ({ resourceRoot, dbPath }) => {
     urlParserHandler,
     loadCommentsHandler(dbPath),
     parseBodyParams,
-    handleGuestBook,
+    handleGuestBook(dbPath),
     serveFileContent(resourceRoot),
     notFoundHandler
   ];
